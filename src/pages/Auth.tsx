@@ -141,7 +141,7 @@ export default function Auth({ onLogin }: AuthProps) {
 
       updateUserData();
       onLogin();
-      navigate('/sustainability');
+      navigate('/about');
     } catch (err) {
       console.error('Auth error:', err);
       setError(err instanceof Error ? err.message : 'An error occurred');
