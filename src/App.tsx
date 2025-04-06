@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Auth from './pages/Auth';
-import Compost from './pages/Compost';
-import Produce from './pages/Produce';
-import Electronics from './pages/Electronics';
-import Sustainability from './pages/Sustainability';
+import Compost from './pages/Wastemanagement';
+import Produce from './pages/Calculator';
+import Electronics from './pages/About';
+import Sustainability from './pages/Review';
 import MapPage from './pages/Map';
 import ChatBot from './components/ChatBot';
 import { UserProvider } from './context/UserContext';
@@ -29,11 +29,11 @@ function App() {
           <Navbar onLogout={handleLogout} />
           <Routes>
             <Route path="/auth" element={<Auth onLogin={() => setIsAuthenticated(true)}/>} />;
-            <Route path="/" element={isAuthenticated ? <Navigate to="/sustainability" replace />  : <Navigate to="/auth" replace />  }  />
-            <Route path="/compost" element={<Compost />} />
-            <Route path="/produce" element={<Produce />} />
-            <Route path="/electronics" element={<Electronics />} />
-            <Route path="/sustainability" element={<Sustainability />} />
+            <Route path="/" element={isAuthenticated ? <Navigate to="/about" replace />  : <Navigate to="/auth" replace />  }  />
+            <Route path="/wastemanagement" element={<Compost />} />
+            <Route path="/calculator" element={<Produce />} />
+            <Route path="/about" element={<Electronics />} />
+            <Route path="/review" element={<Sustainability />} />
             <Route path="/map" element={<MapPage />} />
 
           </Routes>

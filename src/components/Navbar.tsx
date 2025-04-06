@@ -24,32 +24,23 @@ export default function Navbar({ onLogout }: NavbarProps) {
   };
 
   const getUserDisplayName = () => {
-    if (userRole === 'horeca' && companyName) {
-      return companyName;
-    }
-    if (userRole === 'facility' && facilityName) {
-      return facilityName;
-    }
-    return 'Guest';
+    if (!userRole || userRole === 'guest') return 'Guest';
+    if (userRole === 'horeca' && companyName) return companyName;
+    if (userRole === 'facility' && facilityName) return facilityName;
+    return email || 'Guest';
   };
 
   const getUserTypeLabel = () => {
-    if (userRole === 'horeca') {
-      return 'HoReCa Business';
-    }
-    if (userRole === 'facility') {
-      return 'Composting Facility';
-    }
-    return 'Guest';
+    if (!userRole || userRole === 'guest') return 'Guest User';
+    if (userRole === 'horeca') return 'HoReCa Business';
+    if (userRole === 'facility') return 'Composting Facility';
+    return 'Guest User';
   };
 
   const getUserIcon = () => {
-    if (userRole === 'horeca') {
-      return <Building2 className="h-5 w-5" />;
-    }
-    if (userRole === 'facility') {
-      return <Factory className="h-5 w-5" />;
-    }
+    if (!userRole || userRole === 'guest') return <User className="h-5 w-5" />;
+    if (userRole === 'horeca') return <Building2 className="h-5 w-5" />;
+    if (userRole === 'facility') return <Factory className="h-5 w-5" />;
     return <User className="h-5 w-5" />;
   };
 
@@ -63,24 +54,24 @@ export default function Navbar({ onLogout }: NavbarProps) {
           </Link>
 
           <div className="flex items-center space-x-6">
-            <Link to="/compost" className="flex items-center space-x-1 hover:text-green-200">
+            <Link to="/wastemanagement" className="flex items-center space-x-1 hover:text-green-200">
               <Recycle className="h-5 w-5" />
               <span>Waste Management</span>
             </Link>
             
-            <Link to="/produce" className="flex items-center space-x-1 hover:text-green-200">
+            <Link to="/calculator" className="flex items-center space-x-1 hover:text-green-200">
               <Sprout className="h-5 w-5" />
-              <span>Local Produce</span>
+              <span>Waste Calculator</span>
             </Link>
             
-            <Link to="/electronics" className="flex items-center space-x-1 hover:text-green-200">
+            <Link to="/about" className="flex items-center space-x-1 hover:text-green-200">
               <TreePine className="h-5 w-5" />
               <span>About Us</span>
             </Link>
             
-            <Link to="/sustainability" className="flex items-center space-x-1 hover:text-green-200">
+            <Link to="/review" className="flex items-center space-x-1 hover:text-green-200">
               <Leaf className="h-5 w-5" />
-              <span>Eco Guide</span>
+              <span>Give us a rating</span>
             </Link>
 
             <Link to="/map" className="flex items-center space-x-1 hover:text-green-200">

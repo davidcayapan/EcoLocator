@@ -32,25 +32,14 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
   });
 
   const updateUserData = () => {
-    const storedRole = localStorage.getItem('userRole');
+    const storedRole = localStorage.getItem('userRole') as UserRole | null;
     const email = localStorage.getItem('tempEmail');
     const userName = localStorage.getItem('userName');
     const companyName = localStorage.getItem('companyName');
     const facilityName = localStorage.getItem('facilityName');
 
-    // Validate the role is one of the allowed types
-    const userRole = (storedRole === 'horeca' || storedRole === 'facility') ? storedRole : null;
-
-    console.log('Updating user data:', {
-      userRole,
-      email,
-      userName,
-      companyName,
-      facilityName
-    });
-
     setUserData({
-      userRole,
+      userRole: storedRole,
       userName: userName || null,
       companyName: companyName || null,
       facilityName: facilityName || null,
