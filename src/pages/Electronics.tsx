@@ -97,26 +97,28 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Video Section */}
-      <div className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Watch Our Story</h2>
-            <div className="relative pb-[56.25%] h-0 rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://youtu.be/im-7LqvB6sY"
-                title="EcoLocator Introduction"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <p className="text-center text-gray-600 mt-6">
-              Learn more about our journey and vision for a sustainable future.
-            </p>
-          </div>
-        </div>
+{/* Video Section */}
+<div className="bg-gray-50 py-16">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto">
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Watch Our Story</h2>
+      <div className="relative pb-[56.25%] h-0 rounded-lg overflow-hidden shadow-lg">
+        <iframe
+          className="absolute top-0 left-0 w-full h-full"
+          src="https://www.youtube.com/embed/im-7LqvB6sY?si=pAz4QuKS3GLX7Vgt"
+          title="EcoLocator Introduction"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
       </div>
+      <p className="text-center text-gray-600 mt-6">
+        Learn more about our journey and vision for a sustainable future.
+      </p>
+    </div>
+  </div>
+</div>
 
       {/* Team Section */}
       <div className="container mx-auto px-4 py-16">
